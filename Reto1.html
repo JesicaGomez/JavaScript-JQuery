@@ -54,20 +54,30 @@
 
     document.write("<br><h2>Punto 4</h2><br>" );
          
-         var numero = x
-         numero = prompt ("Ingrese su numero para verificar si es perfecto: " );
-         function NumeroPerfercto (numero) {
+         var numero;
+         numero = prompt ("Ingrese un número para verificar si es perfecto: " );
+    function NumeroPerfercto (numero) {
+    	
          var  i;
-         var  x;
+         var sum = 0;
+         var  x = numero;
          for (i = 1; i < x; i++) {
         	if (x % i == 0) {
-            sum += i 
+              sum += i;
+              if (sum == x) {
+                 texto = "Su número es Perfercto";
+              }
+              else{
+              	texto = "Su número no es Perfercto";
+              }
+
         	}
         }
     }
-    
+    NumeroPerfercto (numero);
+    document.write(texto);
  </script>
 
-jesica
+
 </body>
 </html>
