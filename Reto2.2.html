@@ -9,36 +9,83 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-<h1>RETOS JAVASCRIPT</h1>
-<h2>1. Función suma</h2>
-    <form>
-    	Ingrese un número: 
-    	<br>
-    	<input type="number" id="num1" > 
-    	<br>
-    	Ingrese un segundo número:
-    	<br>
-        <input type="number" id="num2" > 
-        <br>
-        <button type="button" class="btn btn-danger">Sumar los numeros</button>
-    </form>
+	<h1>RETOS JAVASCRIPT</h1>
+	<h2>1. Función suma</h2>
+	<form>
+		Ingrese un número: 
+		<br>
+		<input type="number" id="num1" > 
+		<br>
+		Ingrese un segundo número:
+		<br>
+		<input type="number" id="num2" > 
+		<br>
+		<button type="button" class="btn btn-danger" onclick="suma()">Sumar los numeros</button>
+
+	</form>
+	<br>
+	<h3><p id="resul"></p></h3>
+	<h2>2. Longitud de cadena</h2>
+	<form>
+		Ingrese una palabra:
+		<br>
+		<input type="text" id="palabra">
+		<br>
+		<button type="button" class="btn btn-primary" onclick="longitud()"> Medir longitud </button>
+	</form>
+	<h3><p id="long"></p></h3>
+	<h2>3.FizzBuzz</h2>
+	<form>
+		Ingrese un número:
+		<br>
+		<input type="number" id="numero" onkeypress="return justNumbers(event)">
+		<br>
+		<button type="button" class="btn btn-success"  onclick="fizz()">Verificar</button>
+	</form>
+	<h3><p id="text"></p></h3>
+    
+
+	<script type="text/javascript">
+
+		function suma(){
+			var uno = document.getElementById("num1").value;
+			var dos = document.getElementById("num2").value;
+			var resultado;
+			resultado = parseInt(uno) + parseInt(dos);
+			document.getElementById("resul").innerHTML= resultado;
+		}
+		function longitud(){
+			var pal = document.getElementById("palabra").value;
+			var numerodeletras = pal.length;
+			document.getElementById("long").innerHTML = numerodeletras;
+		}
+		function justNumbers(e) {
+            var keynum = window.event ? window.event.keyCode : e.which;
+            if ((keynum == 8) || (keynum == 46))
+            return true;
+            return /\d/.test(String.fromCharCode(keynum));
+        }
+		function fizz(){
+			var texto = "";
+			var num = parseInt(document.getElementById("numero").value);
+			if(num % 3 == 0 && num % 5 == 0) {
+				texto += "FizzBuzz" + "<br>";
+			}
+			else if (num % 3 == 0){
+				texto += "fizz" + "<br>";
+			}
+			else if (num % 5 == 0){
+				texto += "buzz" + "<br>";
+			}
+			else {
+				texto += num;
+			}
+
+			document.getElementById("text").innerHTML = texto;
+		}
 
 
-<script type="text/javascript">
-     var uno = document.getById(num1).value;
-
-     var dos = document.getById(num2).value;
-     var resultado;
-	function suma(){
-		resultado = parseIn(uno) + parseIn(dos);
-
-	}
-	suma();
-	document.write(suma);
-
-
-
-</script>
+	</script>
 
 </body>
 </html>
