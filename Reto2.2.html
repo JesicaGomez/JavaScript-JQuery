@@ -30,7 +30,7 @@
 				<br>
 				<input type="number" id="num2" > 
 				<br>
-				<button type="button" class="btn btn-danger" onclick="suma()">Sumar los numeros</button>
+				<button type="button" class="btn btn-danger" onclick="suma()">Sumar los números</button>
 			</form>
 			<br>
 			<h3><p id="resul"></p></h3>
@@ -53,6 +53,11 @@
 				<br>
 				<input type="number" id="numero" onkeypress="return justNumbers(event)">
 				<br>
+				<ul><li>Sí es multiplo de 3 será "Fizz"</li>
+			        <li>Sí es multiplo de 5 será "Buzz"</li>
+			        <li>Sí es multilplo de 3 y 5 será "Fizzbuzz"</li>
+			        <li>De lo contrario no habrá ningún cambio.</li>
+			    </ul>
 				<button type="button" class="btn btn-success"  onclick="fizz()">Verificar</button>
 			</form>
 			<h3><p id="text"></p></h3>
@@ -66,26 +71,31 @@
 				<br>
 				<input type="number" id="Factor">
 				<br>
-				Ingrese cuatro numeros separados por una coma "," :
+				Ingrese cuatro números separados por coma "," :
 				<br>
 				<input type="text" id="Factores">
 				<br> 
-				<button type="button" class="btn btn-warning" onclick="multiplier()">Multiplicar los numeros</button>
+				<button type="button" class="btn btn-warning" onclick="multiplier()">Multiplicar los números</button>
 			</form>
 			<h3><p id="igual"></p></h3>
 		</div>
-		<div col-md-4>
+		<div class="col-md-4">
 			<h2>5. Fibonacci</h2>
 			<form>
 				Ingrese un número:
 				<br>
 				<input type="number" id="N" >
 				<br>
-				<button type="button" class="btn btn-info" onclick="fibonacci()">Obtener Número Fibonacci</button>
+				<button type="button" class="btn btn-info" onclick="fibonacci()">Obtener sucesión Fibonacci</button>
 			</form>
 			<h3><p id="serie"></p></h3>
 
 		</div>
+		<div class="col-md-4">
+			<h2>6. Tabla del 9</h2>
+
+			<section id="nueve"></section>
+	    </div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -144,7 +154,17 @@
        document.getElementById("serie").innerHTML = rta;
     	
 	}
+   
 
+		var i, rest = " ";
+		for (i = 1; i <= 10; i++) {
+		     var multi = i * 9;
+		     rest = rest + i + " x 9 = " + multi + "<br>";
+
+		}
+
+        document.getElementById("nueve").innerHTML = rest;
+	
 </script>
 
 </body>
