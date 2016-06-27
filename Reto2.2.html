@@ -43,7 +43,28 @@
 		<button type="button" class="btn btn-success"  onclick="fizz()">Verificar</button>
 	</form>
 	<h3><p id="text"></p></h3>
-    
+	<h2>4. Multiplier</h2>
+	<form>
+		Ingrese un número:
+		<br>
+		<input type="number" id="Factor">
+		<br>
+		Ingrese cuatro numeros separados por una coma "," :
+		<br>
+		<input type="text" id="Factores">
+		<br> 
+		<button type="button" class="btn btn-warning" onclick="multiplier()">Multiplicar los numeros</button>
+	</form>
+	<h3><p id="igual"></p></h3>
+	<h2>5. Fibonacci</h2>
+    <form>
+    	Ingrese un número:
+    	<br>
+    	<input type="number" id="N" >
+    	<br>
+    	<button type="button" class="btn btn-info" onclick="fibonacci()">Obtener Número Fibonacci</button>
+    </form>
+    <h3><p id="serie"></p></h3>
 
 	<script type="text/javascript">
 
@@ -64,6 +85,7 @@
             if ((keynum == 8) || (keynum == 46))
             return true;
             return /\d/.test(String.fromCharCode(keynum));
+
         }
 		function fizz(){
 			var texto = "";
@@ -82,6 +104,24 @@
 			}
 
 			document.getElementById("text").innerHTML = texto;
+		}
+        function multiplier(){
+			var f = parseInt(document.getElementById("Factor").value);
+			var fs =document.getElementById("Factores").value;
+			var arrayfs =fs.split(",");
+		    var resultado = arrayfs.map(function(num) {
+		    	return parseInt(num) * f;
+		    })
+			document.getElementById("igual").innerHTML = resultado;
+		}
+		function fibonacci(int n){
+			var n = parseInt(document.getElementById("N").value);
+			var raiz = sqrt(5);
+			var rta = ((1/raiz)*(pow((1+raiz)/2,n)) - (1/raiz)*(pow((1-raiz)/2,n)));
+			document.getElementById("serie").innerHTML = rta;
+			return rta;
+
+			
 		}
 
 
