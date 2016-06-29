@@ -7,125 +7,145 @@
 	<meta name="descripcion" content="Reto2.2">
 	<link rel="stylesheet" type="text/css" href="wh.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>RETOS JAVASCRIPT</h1>
-	<h2>1. Función suma</h2>
-	<form>
-		Ingrese un número: 
-		<br>
-		<input type="number" id="num1" > 
-		<br>
-		Ingrese un segundo número:
-		<br>
-		<input type="number" id="num2" > 
-		<br>
-		<button type="button" class="btn btn-danger" onclick="suma()">Sumar los numeros</button>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h1>RETOS JAVASCRIPT</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<h2>1. Función suma</h2>
+			<form>
+				Ingrese un número: 
+				<br>
+				<input type="number" id="num1" > 
+				<br>
+				Ingrese un segundo número:
+				<br>
+				<input type="number" id="num2" > 
+				<br>
+				<button type="button" class="btn btn-danger" onclick="suma()">Sumar los numeros</button>
+			</form>
+			<br>
+			<h3><p id="resul"></p></h3>
+		</div>
+		<div class="col-md-4">
+			<h2>2. Longitud de cadena</h2>
+			<form>
+				Ingrese una palabra:
+				<br>
+				<input type="text" id="palabra">
+				<br>
+				<button type="button" class="btn btn-primary" onclick="longitud()"> Medir longitud </button>
+			</form>
+			<h3><p id="long"></p></h3>
+		</div>
+		<div class="col-md-4">
+			<h2>3.FizzBuzz</h2>
+			<form>
+				Ingrese un número:
+				<br>
+				<input type="number" id="numero" onkeypress="return justNumbers(event)">
+				<br>
+				<button type="button" class="btn btn-success"  onclick="fizz()">Verificar</button>
+			</form>
+			<h3><p id="text"></p></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<h2>4. Multiplier</h2>
+			<form>
+				Ingrese un número:
+				<br>
+				<input type="number" id="Factor">
+				<br>
+				Ingrese cuatro numeros separados por una coma "," :
+				<br>
+				<input type="text" id="Factores">
+				<br> 
+				<button type="button" class="btn btn-warning" onclick="multiplier()">Multiplicar los numeros</button>
+			</form>
+			<h3><p id="igual"></p></h3>
+		</div>
+		<div col-md-4>
+			<h2>5. Fibonacci</h2>
+			<form>
+				Ingrese un número:
+				<br>
+				<input type="number" id="N" >
+				<br>
+				<button type="button" class="btn btn-info" onclick="fibonacci()">Obtener Número Fibonacci</button>
+			</form>
+			<h3><p id="serie"></p></h3>
 
-	</form>
-	<br>
-	<h3><p id="resul"></p></h3>
-	<h2>2. Longitud de cadena</h2>
-	<form>
-		Ingrese una palabra:
-		<br>
-		<input type="text" id="palabra">
-		<br>
-		<button type="button" class="btn btn-primary" onclick="longitud()"> Medir longitud </button>
-	</form>
-	<h3><p id="long"></p></h3>
-	<h2>3.FizzBuzz</h2>
-	<form>
-		Ingrese un número:
-		<br>
-		<input type="number" id="numero" onkeypress="return justNumbers(event)">
-		<br>
-		<button type="button" class="btn btn-success"  onclick="fizz()">Verificar</button>
-	</form>
-	<h3><p id="text"></p></h3>
-	<h2>4. Multiplier</h2>
-	<form>
-		Ingrese un número:
-		<br>
-		<input type="number" id="Factor">
-		<br>
-		Ingrese cuatro numeros separados por una coma "," :
-		<br>
-		<input type="text" id="Factores">
-		<br> 
-		<button type="button" class="btn btn-warning" onclick="multiplier()">Multiplicar los numeros</button>
-	</form>
-	<h3><p id="igual"></p></h3>
-	<h2>5. Fibonacci</h2>
-    <form>
-    	Ingrese un número:
-    	<br>
-    	<input type="number" id="N" >
-    	<br>
-    	<button type="button" class="btn btn-info" onclick="fibonacci()">Obtener Número Fibonacci</button>
-    </form>
-    <h3><p id="serie"></p></h3>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
 
-	<script type="text/javascript">
+	function suma(){
+		var uno = document.getElementById("num1").value;
+		var dos = document.getElementById("num2").value;
+		var resultado;
+		resultado = parseInt(uno) + parseInt(dos);
+		document.getElementById("resul").innerHTML= resultado;
+	}
+	function longitud(){
+		var pal = document.getElementById("palabra").value;
+		var numerodeletras = pal.length;
+		document.getElementById("long").innerHTML = numerodeletras;
+	}
+	function justNumbers(e) {
+		var keynum = window.event ? window.event.keyCode : e.which;
+		if ((keynum == 8) || (keynum == 46))
+			return true;
+		return /\d/.test(String.fromCharCode(keynum));
 
-		function suma(){
-			var uno = document.getElementById("num1").value;
-			var dos = document.getElementById("num2").value;
-			var resultado;
-			resultado = parseInt(uno) + parseInt(dos);
-			document.getElementById("resul").innerHTML= resultado;
+	}
+	function fizz(){
+		var texto = "";
+		var num = parseInt(document.getElementById("numero").value);
+		if(num % 3 == 0 && num % 5 == 0) {
+			texto += "FizzBuzz" + "<br>";
 		}
-		function longitud(){
-			var pal = document.getElementById("palabra").value;
-			var numerodeletras = pal.length;
-			document.getElementById("long").innerHTML = numerodeletras;
+		else if (num % 3 == 0){
+			texto += "fizz" + "<br>";
 		}
-		function justNumbers(e) {
-            var keynum = window.event ? window.event.keyCode : e.which;
-            if ((keynum == 8) || (keynum == 46))
-            return true;
-            return /\d/.test(String.fromCharCode(keynum));
-
-        }
-		function fizz(){
-			var texto = "";
-			var num = parseInt(document.getElementById("numero").value);
-			if(num % 3 == 0 && num % 5 == 0) {
-				texto += "FizzBuzz" + "<br>";
-			}
-			else if (num % 3 == 0){
-				texto += "fizz" + "<br>";
-			}
-			else if (num % 5 == 0){
-				texto += "buzz" + "<br>";
-			}
-			else {
-				texto += num;
-			}
-
-			document.getElementById("text").innerHTML = texto;
+		else if (num % 5 == 0){
+			texto += "buzz" + "<br>";
 		}
-        function multiplier(){
-			var f = parseInt(document.getElementById("Factor").value);
-			var fs =document.getElementById("Factores").value;
-			var arrayfs =fs.split(",");
-		    var resultado = arrayfs.map(function(num) {
-		    	return parseInt(num) * f;
-		    })
-			document.getElementById("igual").innerHTML = resultado;
-		}
-		function fibonacci(int n){
-			var n = parseInt(document.getElementById("N").value);
-			var raiz = sqrt(5);
-			var rta = ((1/raiz)*(pow((1+raiz)/2,n)) - (1/raiz)*(pow((1-raiz)/2,n)));
-			document.getElementById("serie").innerHTML = rta;
-			return rta;
-
-			
+		else {
+			texto += num;
 		}
 
+		document.getElementById("text").innerHTML = texto;
+	}
+	function multiplier(){
+		var f = parseInt(document.getElementById("Factor").value);
+		var fs =document.getElementById("Factores").value;
+		var arrayfs =fs.split(",");
+		var resultado = arrayfs.map(function(num) {
+			return parseInt(num) * f;
+		})
+		document.getElementById("igual").innerHTML = resultado;
+	}
 
-	</script>
+	function fibonacci() {
+	   var n = parseInt(document.getElementById("N").value);
+	   var raiz = Math.sqrt(5);
+       var  rta = ((1/raiz)*(Math.pow((1+raiz)/2,n)) - (1/raiz)*(Math.pow((1-raiz)/2,n)));
+       document.getElementById("serie").innerHTML = rta;
+    	
+	}
+
+</script>
 
 </body>
 </html>
