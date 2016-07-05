@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabla de multiplicar</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<h3>Tablas de multiplicar</h3>
+
+<script>
+
+tablas();
+
+function tablas() {
+ var body = document.getElementsByTagName("body")[0];
+ var table   = document.createElement("table");
+ var tablebody = document.createElement("tbody");
+ 
+  for (var i = 1; i <= 10; i++) {
+    var fila = document.createElement("tr");
+    for (var j = 1; j <= 10; j++) {
+      var columna = document.createElement("td");
+      var dato = document.createTextNode(i + " x " + j + " = " + i*j);
+      columna.appendChild(dato);
+      fila.appendChild(columna);
+    }
+    tablebody.appendChild(fila);
+  }
+ 
+  table.appendChild(tablebody);
+  body.appendChild(table);
+  table.setAttribute("border", "2");
+}
+
+	
+</script>
+
+</body>
+</html>
