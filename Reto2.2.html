@@ -86,7 +86,7 @@
 			<h3><p id="serie"></p></h3>
 		</div>
 		<div class="col-md-4">
-			<h2>6. Tabla del 9</h2>
+			<h2>6. Tablas de multiplicar</h2>
 
 			<section id="nueve"></section>
 	    </div>
@@ -148,19 +148,33 @@
 	}
 
 	function table(){
-		var body = document.getElementsByTagName("nueve")[0];
-        var tabla   = document.createElement("table");
-        var tablebody = document.createElement("tbody");
-	}
-		var i, rest = " ";
+		var body = document.getElementById("nueve");
+		var tabla   = document.createElement("table");
+		var tablebody = document.createElement("tbody");
+	    var head = document.createElement("thead");
+        var title = document.createElement("th");
+        var nueve = document.createTextNode("TABLA DEL 9");
+        title.appendChild(nueve);
+
+
 		for (i = 1; i <= 10; i++) {
-		     var multi = i * 9;
-		     rest = rest + i + " x 9 = " + multi + "<br>";
-
-		}
-
-        document.getElementById("nueve").innerHTML = rest;
+			var fila = document.createElement("tr");
+			
 	
+			var columna = document.createElement("td");
+			var dato = document.createTextNode(i + " x 9 = " + (i*9)); 
+			columna.appendChild(dato);
+			fila.appendChild(columna);
+			
+			tablebody.appendChild(fila);
+		}
+		tabla.appendChild(tablebody);
+		body.appendChild(tabla);
+		tabla.setAttribute("border", "2");
+		head.appendChild(title);
+
+	}
+     table();
 
 </script>
 
